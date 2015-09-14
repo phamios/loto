@@ -38,30 +38,10 @@
 |
 */
 //$route['module_name'] = 'home/welcome';
-$route['default_controller'] = "home";
+$route['default_controller'] = "admincp";
 $route['404_override'] = '';
 //$route['sp/(:num)'] = "sanpham/$1";
-$route['tin-tuc'] = 'home/news';
  
-$route['sp-(:any)'] = 'home/details/$1';
-$route['sanpham'] = 'home/product';
-$route['danh-muc-([a-zA-Z0-9_-]+)'] = 'home/categories/$1';
-$route['danh-muc-(:any)'] = 'home/categories/$1';
-$route['tim-kiem'] = 'home/search';
-$route['tim-theo-gia/(:any)'] = "home/search_by_cost/$1";
-$route['ban-chay'] = 'home/hotproduct';
-$route['qua-tang'] = 'home/giftcard';
-$route['gui-qua-thanh-cong/(:any)'] = 'home/successfull/$1';
-$route['muc-tin-(:any)'] = "home/catenews/$1";
-$route['tin-(:any)'] = "home/details_news/$1";
-$route['dat-hang-(:any)'] = "home/buynow/$1";
-$route['dang-ky'] = "home/register";
-$route['dang-nhap'] = "home/login";
-$route['dang-xuat'] = "home/logout";
-$route['thong-tin-ca-nhan'] = "home/member";
-$route['gio-hang-cua-ban'] = "home/yourcart";
-$route['loai-bo/(:any)'] = "home/remove_order/$1";
-$route['cam-on-quy-khach'] = "home/thankyou";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

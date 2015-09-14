@@ -1,83 +1,55 @@
-<ul>
-    <li> 
-        <a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse">
-            <i class="fa fa-fw fa-dashboard"></i> 
-            <?php echo $this->lang->line('dashboard'); ?>
-<!--            <i class="fa fa-collapse"></i>-->
-            <span class="label label-info">+8</span>
-        </a>
-    </li>
-    <li>
-        <ul class="dashboard-menu nav nav-list collapse in">
-            <li>
-                <a href="<?php echo site_url('admincp/index'); ?>"><span class="fa fa-caret-right"></span> 
-                    <?php echo $this->lang->line('dashboard'); ?></a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('admincp/configslide'); ?>"><span class="fa fa-caret-right"></span> 
-                    <?php echo $this->lang->line('configslide'); ?></a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('admincp/giftcard'); ?>"><span class="fa fa-caret-right"></span> 
-                   Quản lý đơn hàng</a>
-            </li>
-
-            
-            <?php if ($list_menu <> null): ?>
-                <?php foreach ($list_menu as $menu): ?>
-                    <li>
-                        <a href="<?php echo site_url($menu->mod_name); ?>">
-                            <span class="fa fa-caret-right"></span> 
-                            <?php echo ucfirst($menu->mod_slug); ?></a>
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin</a>
+            </div>
+            <!-- Top Menu Items -->
+       
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                <?php endforeach; ?>
-            <?php endif; ?>
-
-            <li>
-                <a href="<?php echo site_url('admincp/catenews'); ?>"><span class="fa fa-caret-right"></span> 
-                   Q/L Danh mục tin tức</a>
-            </li>
-        </ul>
-    </li>
-
-
-
-
-
-    <li><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse">
-            <i class="fa fa-fw fa-briefcase"></i> 
-            Plugin 
-            <span class="label label-info">+4</span></a>
-    </li>
-    <li><ul class="accounts-menu nav nav-list collapse">
-            <li ><a href="<?php echo site_url('admin/users'); ?>"><span class="fa fa-caret-right"></span><?php echo $this->lang->line('menu_userlist'); ?></a></li>
-            <li ><a href="<?php echo site_url('admin/moduledmos'); ?>"><span class="fa fa-caret-right"></span><?php echo $this->lang->line('menu_modules'); ?></a></li>
-<!--            <li ><a href="<?php echo site_url('admincp/media'); ?>"><span class="fa fa-caret-right"></span> <?php echo $this->lang->line('menu_media'); ?></a></li>-->
-
-            <li>
-                <a href="<?php echo site_url('admincp/configsite'); ?>"><span class="fa fa-caret-right"></span> 
-                    <?php echo $this->lang->line('configsite'); ?></a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('admincp/logout'); ?>"><span class="fa fa-caret-right"></span> 
-                    Logout</a>
-            </li>
-        </ul>
-        
-    </li>
-
-<!--    <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-legal"></i> Legal<i class="fa fa-collapse"></i></a></li>
-    <li>
-        <ul class="legal-menu nav nav-list collapse">
-            <li ><a href="privacy-policy.html"><span class="fa fa-caret-right"></span> Privacy Policy</a></li>
-            <li ><a href="terms-and-conditions.html"><span class="fa fa-caret-right"></span> Terms and Conditions</a></li>
-        </ul>
-    </li>
-
-    <li><a href="help.html" class="nav-header"><i class="fa fa-fw fa-question-circle"></i> Help</a></li>
-    <li><a href="faq.html" class="nav-header"><i class="fa fa-fw fa-comment"></i> Faq</a></li>
-    <li>
-        <a href="http://portnine.com/bootstrap-themes/aircraft" class="nav-header" target="blank">
-            <i class="fa fa-fw fa-heart"></i> Get Premium</a>
-    </li>-->
-</ul>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>

@@ -1,0 +1,5 @@
+[29-Jan-2015 17:24:00] PHP Fatal error:  Call to a member function delete_image() on a non-object in /home/ecogifts/public_html/application/controllers/admincp.php on line 109
+[29-Jan-2015 17:24:07] PHP Fatal error:  Call to a member function delete_image() on a non-object in /home/ecogifts/public_html/application/controllers/admincp.php on line 109
+[29-Jan-2015 17:24:29] PHP Fatal error:  Call to a member function delete_image() on a non-object in /home/ecogifts/public_html/application/controllers/admincp.php on line 109
+[29-Jan-2015 17:25:48] PHP Fatal error:  Call to a member function delete_image() on a non-object in /home/ecogifts/public_html/application/controllers/admincp.php on line 109
+[01-Feb-2015 23:46:15] PHP Fatal error:  Call to undefined method User_model::get_profile() in /home/ecogifts/public_html/application/controllers/admincp.php on line 133

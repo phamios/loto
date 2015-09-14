@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="index.html">Quản lý hệ thống</a>
             </div>
             <!-- Top Menu Items -->
        
@@ -15,39 +15,29 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Tổng quan</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Báo cáo </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="#"><i class="fa fa-fw fa-table"></i> Danh sách thu chi</a>
                     </li>
+       
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-wrench"></i> Quản lý thành viên <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">Danh sách thành viên</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">Thêm mới thành viên</a>
                             </li>
                         </ul>
                     </li>
+                      
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Thoát </a>
                     </li>
                 </ul>
             </div>

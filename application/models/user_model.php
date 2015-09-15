@@ -6,48 +6,38 @@ if (!defined('BASEPATH'))
 class User_model extends CI_Model {
 
     function __construct() {
-        // Call the Model constructor
         parent::__construct();
         $this->load->database();
     }
 
     function list_all() {
-        $this->load->database();
         $this->db->order_by("id", "desc");
-        $query = $this->db->get('tbl_user');
+        $query = $this->db->get('tbl_users');
         if ($query->num_rows() > 0) {
             return $query->result();
         }
         return $query->result();
     }
 
-    function list_all_member() {
-        $this->load->database();
-        $this->db->where('utype !=', 1);
-        $this->db->order_by("id", "desc");
-        $query = $this->db->get('tbl_user');
-        if ($query->num_rows() > 0) {
-            return $query->result();
-        }
-        return $query->result();
-    }
+
 
     function get_profile($id) {
         $this->db->where('id', $id);
         $this->load->database();
-        $query = $this->db->get('tbl_user');
+        $query = $this->db->get('tbl_users');
         if ($query->num_rows() > 0) {
             return $query->result();
         }
         return $query->result();
     }
 
-    function authen($username, $password, $usertype = null, $status = null) {
+    function authen($username, $password) {
         $this->db->where(array(
-            'uname' => trim($username),
-            'upass' => md5($this->config->item('key') . '+-*%' . $password),
+            'username' => trim($username),
+            'userimei' => md5('+-*%vietgit' . $password),
         ));
-        $query = $this->db->get('tbl_user');
+        echo md5('+-*%vietgit' . $password); die;
+        $query = $this->db->get('tbl_users');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $value) {
                 $result = array(
@@ -67,7 +57,7 @@ class User_model extends CI_Model {
         $this->db->where(array(
             'uname' => $username,
         ));
-        $query = $this->db->get("tbl_user");
+        $query = $this->db->get("tbl_users");
         if ($query->num_rows() > 0) {
             return false;
         } else {
@@ -91,7 +81,7 @@ class User_model extends CI_Model {
                 'uphone' => $values['phone'],
                 'uaddress' => $values['address'],
             );
-            $this->db->insert('tbl_user', $data);
+            $this->db->insert('tbl_users', $data);
             return $this->get_id($values['username']);
         } else {
             return null;
@@ -109,14 +99,14 @@ class User_model extends CI_Model {
             'uaddress' => $values['address'],
         ); 
         $this->db->where('id', $values['id']);
-        $this->db->update('tbl_user', $data);
+        $this->db->update('tbl_users', $data);
     }
 
     function get_id($username) {
         $this->db->where(array(
             'uname' => $username,
         ));
-        $query = $this->db->get("tbl_user");
+        $query = $this->db->get("tbl_users");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $values) {
                 return $values->id;
@@ -131,13 +121,13 @@ class User_model extends CI_Model {
             'upass' => md5($this->config->item('key') . '+-*%' . $newpass),
         );
         $this->db->where('id', $userid);
-        $this->db->update('tbl_user', $data);
+        $this->db->update('tbl_users', $data);
     }
 
     function delete($id) {
         $this->load->database();
         $this->db->where('id', $id);
-        $this->db->delete('tbl_user');
+        $this->db->delete('tbl_users');
     }
 
 }

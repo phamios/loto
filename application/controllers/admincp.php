@@ -34,8 +34,8 @@ class admincp extends CI_Controller {
 
     function login() {
         if ($this->session->userdata('admin_id') == null) {
-            if (isset($_REQUEST['go'])) {
-                $username = $this->input->post('email', true);
+            if (isset($_REQUEST['loginsubmit'])) {
+                $username = $this->input->post('username', true);
                 $password = $this->input->post('password', true);
                 $this->load->model('user_model');
                 $result = $this->user_model->authen($username, $password);

@@ -11,11 +11,11 @@
 <div class="wrapper">
     <div class="container">
         <h1>Đăng nhập hệ thống</h1>
-        <form class="form">
-            <input type="text" placeholder="Tên đăng nhập">
-            <input type="password" placeholder="Mật khẩu">
-            <button type="submit" id="login-button">Đăng nhập</button>
-        </form>
+        <?php echo form_open_multipart('admincp/login'); ?>
+            <input type="text" id="username" name="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" name="password" placeholder="Mật khẩu">
+            <button type="submit" name="loginsubmit" id="login-button">Đăng nhập</button>
+        <?php echo form_close(); ?>
     </div>
 
     <ul class="bg-bubbles">
@@ -34,9 +34,6 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <script src="<?php echo base_url('assets/login');?>/js/index.js"></script>
-
-
-
 
 </body>
 </html>

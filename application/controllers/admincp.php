@@ -22,14 +22,12 @@ class admincp extends CI_Controller {
     }
 
     function index() {
-        $this->load->view('admincp/index.php');
-        // if ($this->session->userdata('admin_id') == null) {
-        //     redirect('admincp/login');
-        // } else {
-        //     $this->log_model->log($this->session->userdata('admin_id'), $this->router->class . '-' . $this->router->method);
-        //     $data['list_menu'] = $this->modules_model->list_all_active();
-        //     $this->load->view('admincp/dashboard', $data);
-        // }
+
+         if ($this->session->userdata('admin_id') == null) {
+             redirect('admincp/login');
+         } else {
+             $this->load->view('admincp/index');
+         }
     }
 
     

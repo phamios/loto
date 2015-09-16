@@ -36,7 +36,6 @@ class User_model extends CI_Model {
             'username' => trim($username),
             'userimei' => md5('+-*%vietgit' . $password),
         ));
-        echo md5('+-*%vietgit' . $password); die;
         $query = $this->db->get('tbl_users');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $value) {
@@ -55,7 +54,7 @@ class User_model extends CI_Model {
 
     function check_exit($username) {
         $this->db->where(array(
-            'uname' => $username,
+            'username' => $username,
         ));
         $query = $this->db->get("tbl_users");
         if ($query->num_rows() > 0) {

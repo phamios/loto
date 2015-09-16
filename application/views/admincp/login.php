@@ -12,9 +12,9 @@
     <div class="container">
         <h1>Đăng nhập hệ thống</h1>
         <?php echo form_open_multipart('admincp/login'); ?>
-            <input type="text" id="username" name="username" placeholder="Tên đăng nhập">
-            <input type="password" id="password" name="password" placeholder="Mật khẩu">
-            <button type="submit" name="loginsubmit" id="login-button">Đăng nhập</button>
+            <input type="text" id="username" name="username" placeholder="Tên đăng nhập" />
+            <input type="password" id="password" name="password" placeholder="Mật khẩu" />
+            <input type="submit" name="loginsubmit" id="login-button" value="Đăng nhập" />
         <?php echo form_close(); ?>
     </div>
 

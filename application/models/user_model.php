@@ -34,16 +34,16 @@ class User_model extends CI_Model {
     function authen($username, $password) {
         $this->db->where(array(
             'username' => trim($username),
-            'userimei' => md5('+-*%vietgit' . $password),
+            'userpass' => md5($password),
         ));
         $query = $this->db->get('tbl_users');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $value) {
                 $result = array(
                     'user_id' => $value->id,
-                    'user_name' => $value->uname,
-                    'user_type' => $value->utype,
-                    'user_active' => $value->uactive
+                    'user_name' => $value->username,
+                    'user_type' => $value->status,
+                    'user_active' => $value->status
                 );
                 return $result;
             }
@@ -128,5 +128,18 @@ class User_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete('tbl_users');
     }
-
+    
+    function create_user($data){
+        $this->db->insert('tbl_users',$data);
+    }
+    function get_user_page($from,$limit){
+        $this->db->limit($limit,$from);
+        $this->db->where('status = 2 or status = 3');
+        return $this->db->get('tbl_users')->result();
+    }
+    function get_number_user(){
+        $this->db->where('status = 2 or status = 3');
+        $query = $this->db->get('tbl_users');
+        return $query->num_rows();
+    }
 }

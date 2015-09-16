@@ -30,8 +30,6 @@ class admincp extends CI_Controller {
          }
     }
 
-    
-
     function login() {
         if ($this->session->userdata('admin_id') == null) {
             if (isset($_REQUEST['loginsubmit'])) {

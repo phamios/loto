@@ -65,7 +65,60 @@
     <script src="<?php echo base_url('assets/backend');?>/js/plugins/morris/raphael.min.js"></script>
     <script src="<?php echo base_url('assets/backend');?>/js/plugins/morris/morris.min.js"></script>
     <script src="<?php echo base_url('assets/backend');?>/js/plugins/morris/morris-data.js"></script>
-
+    <script>
+        var getUrl = window.location;
+        var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        $("#createuser").submit(function( event ) {
+                  username = $('#input-user').val();
+                  pass = $('#input-pass').val();
+                  repeat = $('#input-pass-repeat').val();
+                  if(pass.length <6 || pass.length >15){
+                      alert("password 6~15 character");
+                      return false;
+                  }
+                  if(pass !== repeat){
+                      alert("password not same");
+                      return false;
+                  }
+                  submit = this;
+                  $.ajax({type: 'POST', dataType: 'json', url: baseUrl+"/admin/user/ajaxcheck",
+                              data: {
+                                  'action': "username",
+                                  'username': username,
+                                  'pass': pass,
+                                  'repeat': repeat
+                              },
+                              success: function(data) {
+                                if (data.status == true) {
+                                    submit.submit();
+                                }else{
+                                    alert("Username exit");
+                                }
+                              }
+                });
+               event.preventDefault();  
+      });
+        $(document).on("click", "#changeactive",function () {
+            click = this;
+//            alert("ok");
+//            $(this).prop('disabled', true);
+            id = $(this).parent().parent().find('td').first().text();
+//            alert("id : "+ id);
+//            $.ajax({type: 'POST', dataType: 'json', url: baseUrl+"/admin/user/ajaxcheck",
+//                              data: {
+//                                  'action': "changeactive",
+//                                  'id': username
+//                              },
+//                              success: function(data) {
+//                                if (data.status == true) {
+//                                    submit.submit();
+//                                }else{
+//                                    alert("Username exit");
+//                                }
+//                              }
+//            });
+        });
+    </script>
 </body>
 
 </html>
